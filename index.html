@@ -1,0 +1,136 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+
+  <title>ES Pisang Ijo JMBD</title>
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="static/css/bootstrap.css" />
+
+  <!-- Custom styles -->
+  <link href="static/css/style.css" rel="stylesheet" />
+  <!-- Responsive style -->
+  <link href="static/css/responsive.css" rel="stylesheet" />
+
+</head>
+
+<body>
+  <div class="hero_area">
+    <!-- header section -->
+    <header class="header_section">
+      <div class="container">
+        <nav class="navbar navbar-expand-lg custom_nav-container">
+          <a class="navbar-brand" href="index.html">
+            <span>
+              ES Pisang Ijo JMBD
+            </span>
+          </a>
+        </nav>
+      </div>
+    </header>
+    <!-- end header section -->
+
+    <!-- slider section -->
+    <section class="slider_section">
+      <div class="slider_bg_box">
+        <img src="static/images/slider-bg.png" alt="">
+      </div>
+      <div class="container">
+        <div class="detail-box">
+          <h1>
+            Pisang Ijo Lezat
+          </h1>
+          <p>
+            Nikmati kelezatan Es Pisang Ijo dengan berbagai rasa.
+          </p>
+          <a href="#products">
+            Lihat Produk
+          </a>
+        </div>
+      </div>
+    </section>
+    <!-- end slider section -->
+  </div>
+
+  <!-- products section -->
+  <section id="products" class="products_section">
+    <div class="container">
+      <div class="heading_container">
+        <h2>
+          Produk Kami
+        </h2>
+      </div>
+      <div class="row">
+        <!-- Produk 1 -->
+        <div class="col-md-4">
+          <div class="box">
+            <img src="static/images/pisang-ijo-coklat.png" alt="Pisang Ijo Rasa Klasik">
+            <h5>Pisang Ijo Rasa Klasik</h5>
+            <p>Harga: Rp 10.000</p>
+            <button onclick="addToCart('Pisang Ijo Klasik', 10000)">BELI SEKARANG</button>
+          </div>
+        </div>
+        <!-- Produk 2 -->
+        <div class="col-md-4">
+          <div class="box">
+            <img src="static/images/pisang-ijo-keju.png" alt="Pisang Ijo Rasa Coklat">
+            <h5>Pisang Ijo Rasa Coklat</h5>
+            <p>Harga: Rp 12.000</p>
+            <button onclick="addToCart('Pisang Ijo Coklat', 12000)">BELI SEKARANG</button>
+          </div>
+        </div>
+        <!-- Produk 3 -->
+        <div class="col-md-4">
+          <div class="box">
+            <img src="static/images/pisang-ijo-klasik.png" alt="Pisang Ijo Rasa Keju">
+            <h5>Pisang Ijo Rasa Keju</h5>
+            <p>Harga: Rp 15.000</p>
+            <button onclick="addToCart('Pisang Ijo Keju', 15000)">BELI SEKARANG</button>
+          </div>
+        </div>
+      </div>
+      <div class="btn-box">
+        <a href="checkout.html" class="btn btn-primary">Lanjut ke Checkout</a>
+      </div>
+    </div>
+  </section>
+  <!-- end products section -->
+
+  <!-- footer section -->
+  <footer class="footer_section">
+    <div class="container">
+      <p>
+        &copy; 2025 All Rights Reserved. Design by JMBD.
+      </p>
+    </div>
+  </footer>
+  <!-- end footer section -->
+
+  <script>
+    function addToCart(productName, productPrice) {
+      // Ambil keranjang dari localStorage
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+      // Tambahkan produk ke keranjang
+      cart.push({ name: productName, price: productPrice });
+
+      // Simpan kembali ke localStorage
+      localStorage.setItem('cart', JSON.stringify(cart));
+
+      alert(`${productName} berhasil ditambahkan ke keranjang!`);
+    }
+  </script>
+</body>
+
+</html>

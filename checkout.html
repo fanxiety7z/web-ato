@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <title>Checkout - ES Pisang Ijo JMBD</title>
+  <link rel="stylesheet" href="static/css/bootstrap.css" />
+  <link rel="stylesheet" href="static/css/style.css" />
+</head>
+
+<body>
+  <div class="container">
+    <h1>Checkout</h1>
+    <div id="cart-items"></div>
+    <div id="total-price"></div>
+    <button onclick="confirmPurchase()">Konfirmasi Pembelian</button>
+  </div>
+  <script>
+    function displayCart() {
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+      let cartItemsDiv = document.getElementById('cart-items');
+      let totalPriceDiv = document.getElementById('total-price');
+      let total = 0;
+
+      cartItemsDiv.innerHTML = '<h2>Produk di Keranjang:</h2>';
+      cart.forEach(item => {
+        cartItemsDiv.innerHTML += `<p>${item.name} - Rp ${item.price}</p>`;
+        total += item.price;
+      });
+
+      totalPriceDiv.innerHTML = `<h3>Total: Rp ${total}</h3>`;
+    }
+
+    function confirmPurchase() {
+      alert('Pesanan Anda telah dikonfirmasi!');
+      localStorage.removeItem('cart');
+      window.location.href = 'confirmation.html';
+    }
+
+    displayCart();
+  </script>
+</body>
+
+</html>
